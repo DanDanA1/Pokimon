@@ -8,27 +8,27 @@ function Loguear() {
         alert('usuario incorrecto')
     }  
     document.getElementById('registroForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita el envío tradicional del formulario
+        event.preventDefault();
     
-        // Obtener los valores de los campos
+        
         const nombre = document.getElementById('nombre').value;
         const email = document.getElementById('email').value;
         const contrasena = document.getElementById('contrasena').value;
     
-        // Aquí puedes realizar la validación de datos
+        
         if (!nombre || !email || !contrasena) {
             alert('Por favor, complete todos los campos.');
             return;
         }
     
-        // Ejemplo: Enviar datos a un servidor (simulado)
+        
         const datosRegistro = {
             nombre: nombre,
             email: email,
             contrasena: contrasena
         };
     
-        fetch('/registro', { // Reemplaza '/registro' con la URL de tu servidor
+        fetch('/registro', { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
