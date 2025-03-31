@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Batalla Pokimon</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ffffff;
+      text-align: center; 
+    }
+
+    .pokemon-battle {
+      background-color: #ffffff;
+      border: 1px solid #0c0101;
+      padding: 20px;
+      width: 400px;
+      margin: 20px auto;
+
+    }
+
+    h1 {
+      color: #000000;
+    }
+
+    p {
+      color: #000000;
+
+
+
+    }
+    
+
+     </style>
+</head>
+<body>
+  <div class="pokemon-battle">
+    <h1>¡Batalla Pokimon!</h1>
+    <p id="resultado"></p>
+    
+  </div>
+
+  <script>
+    // Coloca todo el código JavaScript aquí
+    // ... (clases, funciones y arreglo de Pokémon)
+
+    class Entrenador {
+        constructor(nombre, pokemonInicial) {
+          this.nombre = nombre;
+          this.pokemon = [pokemonInicial]; // El entrenador comienza con un Pokémon
+        }
+      
+        capturarPokemon(nuevoPokemon) {
+          this.pokemon.push(nuevoPokemon);
+          console.log(`${this.nombre} ha capturado a ${nuevoPokemon.nombre}!`);
+        }
+      }
+
+
+      class Pokemon {
+        constructor(nombre, tipo, ataque, defensa, habilidad, evolucion) {
+          this.nombre = nombre;
+          this.tipo = tipo;
+          this.ataque = ataque;
+          this.defensa = defensa;
+          this.habilidad = habilidad;
+          this.evolucion = evolucion;
+          this.vida = 100; // Todos los Pokémon comienzan con 100 de vida
+        }
+      
+        recibirAtaque(daño) {
+          this.vida -= daño;
+          if (this.vida < 0) {
+            this.vida = 0;
+          }
+        }
+        }
+        function calcularDaño(atacante, defensor) {
+            let daño = atacante.ataque - defensor.defensa;
+            if (daño < 0) {
+              daño = 0; // El daño no puede ser negativo
+            }
+            return daño;
+          }
+          
+          function defender(defensor) {
+            // Aquí puedes agregar lógica para habilidades defensivas o efectos especiales
+            console.log(`${defensor.nombre} se está defendiendo.`);
+          }
+
+
+
+
+
+        const pokemons = [
+    new Pokemon("Pikachu", "Eléctrico", 55, 40, "Electricidad Estática", "Raichu"),
+    new Pokemon("Charizard", "Fuego/Volador", 84, 78, "Mar Llamas", "Mega-Charizard"),
+    new Pokemon("Bulbasaur", "Planta/Veneno", 49, 49, "Espesura", "Ivysaur"),
+    new Pokemon("Squirtle", "Agua", 48, 65, "Torrente", "Wartortle"),
+    new Pokemon("Gengar", "Fantasma/Veneno", 65, 60, "Levitación", "Mega-Gengar"),
+  ]
+  
+  class Batalla {
+    constructor(entrenador1, entrenador2) {
+      this.entrenador1 = entrenador1;
+      this.entrenador2 = entrenador2;
+    }
+
+    
+    iniciarBatalla() {
+      console.log(`¡Comienza la batalla entre ${this.entrenador1.nombre} y ${this.entrenador2.nombre}!`);
+  
+      let pokemon1 = this.entrenador1.pokemon[0];
+      let pokemon2 = this.entrenador2.pokemon[0];
+  
+      while (pokemon1.vida > 0 && pokemon2.vida > 0) {
+        // Turno del entrenador 1
+        let daño1 = calcularDaño(pokemon1, pokemon2);
+        pokemon2.recibirAtaque(daño1);
+        console.log(`${pokemon1.nombre} ataca a ${pokemon2.nombre} e inflige ${daño1} de daño.`);
+  
+        if (pokemon2.vida <= 0) {
+          console.log(`${pokemon2.nombre} se ha debilitado. ¡${pokemon1.nombre} gana!`);
+          break;
+        }
+  
+        // Turno del entrenador 2
+        let daño2 = calcularDaño(pokemon2, pokemon1);
+        pokemon1.recibirAtaque(daño2);
+        console.log(`${pokemon2.nombre} ataca a ${pokemon1.nombre} e inflige ${daño2} de daño.`);
+  
+        if (pokemon1.vida <= 0) {
+          console.log(`${pokemon1.nombre} se ha debilitado. ¡${pokemon2.nombre} gana!`);
+          break;
+        }
+
+        // Simular defensa (opcional)
+        defender(pokemon1);
+        defender(pokemon2);
+      }
+    }
+  }
+
+    // Crear entrenadores y la batalla
+    const ash = new Entrenador("Ash", pokemons[0]);
+    const gary = new Entrenador("Gary", pokemons[1]);
+    const batalla = new Batalla(ash, gary);
+
+    // Iniciar la batalla y mostrar el resultado en la página
+    batalla.iniciarBatalla();
+    document.getElementById("resultado").textContent = "¡Batalla terminada! Revisa la consola para ver los resultados.";
+    </script>
+</body>
+</html>
