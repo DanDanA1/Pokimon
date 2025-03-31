@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Batalla Pokémon</title>
+</head>
+<body>
+
+<h1>Batalla Pokémon</h1>
+
+<script>
+class Pokemon {
+    constructor(nombre, tipo, habilidad, ataque, defensa, evolucion) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.habilidad = habilidad;
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.evolucion = evolucion;
+    }
+
+    toString() {
+        return `${this.nombre} (${this.tipo}): Ataque=${this.ataque}, Defensa=${this.defensa}`;
+    }
+}
+
+class Entrenador {
+    constructor(nombre, equipo) {
+        this.nombre = nombre;
+        this.equipo = equipo;
+    }
+
+    mostrarEquipo() {
+        let equipoTexto = `Equipo de ${this.nombre}:<br>`;
+        this.equipo.forEach(pokemon => {
+            equipoTexto += pokemon.toString() + "<br>";
+        });
+        return equipoTexto;
+    }
+}
+
+function ataque(atacante, defensor) {
+    const daño = atacante.ataque - defensor.defensa;
+    if (daño > 0) {
+        return `${atacante.nombre} ataca a ${defensor.nombre} y le causa ${daño} puntos de daño.`;
+    } else {
+        return `${atacante.nombre} ataca a ${defensor.nombre}, ¡pero no le hace daño!`;
+    }
+}
+
+function defensa(defensor, daño) {
+    const dañoReal = Math.max(0, daño - Math.floor(defensor.defensa / 2));
+    return `${defensor.nombre} se defiende y recibe ${dañoReal} puntos de daño.`;
+}
+
+class Batalla {
+    constructor(entrenador1, entrenador2) {
+        this.entrenador1 = entrenador1;
+        this.entrenador2 = entrenador2;
+    }
+
+    iniciarBatalla() {
+        let batallaTexto = `¡Comienza la batalla entre ${this.entrenador1.nombre} y ${this.entrenador2.nombre}!<br>`;
+        const pokemon1 = this.entrenador1.equipo[0];
+        const pokemon2 = this.entrenador2.equipo[0];
+
+        batallaTexto += ataque(pokemon1, pokemon2) + "<br>";
+        batallaTexto += defensa(pokemon2, pokemon1.ataque - pokemon2.defensa) + "<br>";
+
+        return batallaTexto;
+    }
+}
+
+// Crear Pokémon
+const charmander = new Pokemon("Charmander", "Fuego", "Mar llamas", 52, 43, "Charmeleon");
+const bulbasaur = new Pokemon("Bulbasaur", "Planta", "Espesura", 49, 49, "Ivysaur");
+const squirtle = new Pokemon("Squirtle", "Agua", "Torrente", 48, 65, "Wartortle");
+const pikachu = new Pokemon("Pikachu", "Eléctrico", "Elec. Estática", 55, 40, "Raichu");
+const eevee = new Pokemon("Eevee", "Normal", "Adaptable", 55, 50, "Vaporeon");
+
+// Crear entrenadores
+const entrenadorAsh = new Entrenador("Ash", [pikachu, bulbasaur]);
+const entrenadorGary = new Entrenador("Gary", [eevee, charmander, squirtle]);
+
+// Iniciar batalla
+const batalla = new Batalla(entrenadorAsh, entrenadorGary);
+
+// Mostrar resultados en la página
+document.write(batalla.iniciarBatalla());
+document.write(entrenadorAsh.mostrarEquipo());
+document.write(entrenadorGary.mostrarEquipo());
+</script>
+
+</body>
+</html>
