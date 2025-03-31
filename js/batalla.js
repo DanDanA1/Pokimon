@@ -11,7 +11,7 @@ class Batalla {
       let pokemon2 = this.entrenador2.pokemon[0];
   
       while (pokemon1.vida > 0 && pokemon2.vida > 0) {
-        // Turno del entrenador 1
+       
         let daño1 = calcularDaño(pokemon1, pokemon2);
         pokemon2.recibirAtaque(daño1);
         console.log(`${pokemon1.nombre} ataca a ${pokemon2.nombre} e inflige ${daño1} de daño.`);
@@ -21,7 +21,7 @@ class Batalla {
           break;
         }
   
-        // Turno del entrenador 2
+       
         let daño2 = calcularDaño(pokemon2, pokemon1);
         pokemon1.recibirAtaque(daño2);
         console.log(`${pokemon2.nombre} ataca a ${pokemon1.nombre} e inflige ${daño2} de daño.`);
