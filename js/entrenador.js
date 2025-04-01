@@ -1,11 +1,11 @@
-  class Entrenador {
-    constructor(nombre, pokemonInicial) {
-      this.nombre = nombre;
-      this.pokemon = [pokemonInicial]; // El entrenador comienza con un Pokémon
-    }
+function GetDataUser(){
+  let dataUser = localStorage.getItem("user")
   
-    capturarPokemon(nuevoPokemon) {
-      this.pokemon.push(nuevoPokemon);
-      console.log(`${this.nombre} ha capturado a ${nuevoPokemon.nombre}!`);
-    }
+  if(dataUser == null){
+      alert('No has iniciado sesion')
+      window.location.href = "../index.html"
   }
+  
+}
+
+GetDataUser()
