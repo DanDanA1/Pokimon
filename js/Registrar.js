@@ -17,5 +17,5 @@ function Registrar() {
 
     localStorage.setItem("user", JSON.stringify(array));
     alert("Usuario registrado correctamente")
-    window.location.href = "../vistas/Entrenador.html"
+    window.location.href = "../vistas/login.html"
 }
