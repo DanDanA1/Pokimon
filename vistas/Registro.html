@@ -3,13 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registrarse</title>
-        <script src="../js/registrar.js"></script>
-        <center>
-        <center>
+        <title>POKIMON</title>
+        
+        
         <style>
             body {
-                background-image: url('https://occ-0-8407-1009.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABf_vkYSzY2EsbRFAOJOS3_ZdreU4YoqzdzVZf-f1CEP9ndmI3705aHteXy3ZD7tLH4YbavoJT3lPK9luZDLgQxhQOBw1tLuBzxFG.jpg?r=b99');
+                background-image: url('https://i.pinimg.com/originals/71/31/77/713177e7b221e3d2570237268fd19c6e.gif');
                 background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
@@ -18,19 +17,20 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: rgb(243, 240, 237);
-                font-family: Arial, sans-serif;
+                color: rgb(8, 56, 61);
+                font-family:Georgia, 'Times New Roman', Times, serif;
             }
     
             
-            .content-container {
-                background-color: rgba(156, 9, 9, 0.6);
-                padding: 20px;
-                border-radius: 10px;
-                width: 300px;
-                text-align: center;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            }
+            
+           .content-container {
+            background-color: rgba(0, 0, 0, 0.741);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.882);
+        }
     
             h1 {
                 font-size: 36px;
@@ -48,7 +48,7 @@
                 padding: 10px;
                 margin: 10px 0;
                 background-color: #030202;
-                color: black;
+                color: rgb(20, 137, 176);
                 text-decoration: none;
                 border-radius: 5px;
                 font-size: 18px;
@@ -64,56 +64,57 @@
             button {
                 width: 100%;
                 padding: 10px;
-                background-color: #ff0000;
+                background-color: #098c95d0;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
                 font-size: 16px;
-                color: rgb(248, 248, 248);
+                color: rgb(255, 255, 255);
             }
     
             button:hover {
                 background-color: #ff9900; /* Cambia el color cuando pasas el mouse */
             }
         </style>
-    </center>
-</center>
+        <script src="../js/registrar.js"></script>
+   
 
     </head>
     <body>
+        <div class="menu-container"></div> 
         <center>
             <h1>BIENVENIDO AL MUNDO POKIMON</h1>
             <p>Bienvenido a mi primer juego en javascript</p>
-        </center>
-        <hr>
-        <br>
-        <br>
-        <br>
-        <center>
+        </div> 
+       <div class="input-group">
             <p>Por favor ingrese los datos para registrarse</p>
-
-            <br>
             <label>Nombre</label>
             <input type="text" name="nombre" id="nombre" />
+            <br>
             <br>
             <label>Apellido</label>
             <input type="text" name="apellido" id="apellido" />
             <br>
+            <br>
             <label>Dirección</label>
             <input type="text" name="direccion" id="direccion" />
+            <br>
             <br>
             <label>Teléfono</label>
             <input type="text" name="telefono" id="telefono" />
             <br>
+            <br>
             <label>Email</label>
             <input type="text" name="email" id="email" />
+            <br>
             <br>
             <label>Password</label>
             <input type="password" name="contrasena" id="contrasena" />
             <br>
+            <br>
+            <br>
             <button onclick="Registrar()">Registrar</button>
-        </center>
-        <br>
-        <br>
+        </div>
+    
     </body>
 </html>

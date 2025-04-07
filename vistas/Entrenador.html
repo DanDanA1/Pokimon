@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKIMON</title>
+</head>
+<body>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .trainer-button {
+            background-color: #007bff; /* Cool Blue */
+        }
+
+        .pokemon-button {
+            background-color: #ffcb05; /* Cheerful Yellow */
+            color: #212529; /* Dark text for contrast */
+        }
+
+        .start-button {
+            background-color: #28a745; /* Friendly Green */
+        }
+
+        .trainer-button:hover {
+            background-color: #0056b3;
+        }
+
+        .pokemon-button:hover {
+            background-color: #e0b800;
+        }
+
+        .start-button:hover {
+            background-color: #218838;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Bienvenido, Entrenador!</h1>
+    <div class="button-container">
+        <button class="button trainer-button" onclick="goToTrainer()">Mi Perfil de Entrenador</button>
+        <button class="button pokemon-button" onclick="goToPokemon()">Ver mi Equipo Pokémon</button>
+        <button class="button start-button" onclick="startGame()">¡Comenzar Nueva Aventura!</button>
+    </div>
+    <p>¡Elige cómo quieres explorar el mundo Pokémon!</p>
+
+    <script>
+        function goToTrainer() {
+            alert("¡Aquí podrás ver la información de tu entrenador!");
+            // Aquí puedes agregar la lógica para mostrar el perfil del entrenador
+        }
+
+        function goToPokemon() {
+            alert("¡Mira los increíbles Pokémon que te acompañan!");
+            // Aquí puedes agregar la lógica para mostrar el equipo Pokémon
+        }
+
+        function startGame() {
+            alert("¡Una nueva y emocionante aventura está por comenzar!");
+            // Aquí puedes agregar la lógica para iniciar el juego
+        }
+    </script>
+</body>
+</html>
+    
+</body>
+</html>

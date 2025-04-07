@@ -4,97 +4,110 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>POKIMON</title>
-        <script src="../js/index.js"></script>
-    </head>
-    <body>
-        <center>
-        <style>
-            body {
-                background-image: url('https://i.blogs.es/a02312/pikachu/1366_2000.jpeg');
-                background-size: cover;
-                background-position: center center;
-                background-repeat: no-repeat;
-                height: 100vh;
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: rgb(194, 90, 5);
-                font-family: Arial, sans-serif;
-            }
-    
-            
-            .content-container {
-                background-color: rgba(0, 0, 0, 0.6);
-                padding: 20px;
-                border-radius: 10px;
-                width: 300px;
-                text-align: center;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            }
-    
-            h1 {
-                font-size: 36px;
-                margin-bottom: 20px;
-            }
-    
-            p {
-                font-size: 18px;
-                margin-bottom: 30px;
-            }
-    
-            /* Estilo para los enlaces */
-            a {
-                display: block;
-                padding: 10px;
-                margin: 10px 0;
-                background-color: #000000;
-                color: black;
-                text-decoration: none;
-                border-radius: 5px;
-                font-size: 18px;
-                text-transform: uppercase;
-            }
-    
-            
-            a:hover {
-                background-color: #ff9900;
-            }
-    
-            
-            button {
-                width: 100%;
-                padding: 10px;
-                background-color: #c26f04;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 16px;
-                color: rgb(7, 3, 0);
-            }
-    
-            button:hover {
-                background-color: #ff9900; /* Cambia el color cuando pasas el mouse */
-            }
-        </style>
-    </center>
 
-        <center>
+   <style>
+        body {
+                    background-image: url('https://wallpapers-clan.com/wp-content/uploads/2024/06/pokemon-pikachu-electric-jump-desktop-wallpaper-preview.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    height: 100vh;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #eee; /* Texto en un tono gris claro */
+                    font-family: 'Times New Roman', Times, serif;
+                }
+        
+                .menu-container {
+                    background-color: rgba(30, 30, 30, 0.85); /* Fondo casi negro semi-transparente */
+                    padding: 30px;
+                    border-radius: 12px;
+                    text-align: center;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+                    width: 400px;
+                    border: 1px solid #ffffff; /* Un borde sutil para definir el contenedor */
+                }
+        
+                h1 {
+                    font-size: 2.2em;
+                    color: #ffffff; /* Amarillo Pokémon para que resalte */
+                    margin-bottom: 18px;
+                    text-shadow: 1px 1px #000000; /* Sombra oscura para el título */
+                }
+        
+                p {
+                    font-size: 1.1em;
+                    margin-bottom: 22px;
+                    color: #ffffff; /* Texto del párrafo en un gris más claro */
+                }
+        
+                .input-group {
+                    margin-bottom: 18px;
+                }
+        
+                label {
+                    display: block;
+                    font-size: 1em;
+                    margin-bottom: 4px;
+                    color: #000000;
+                }
+        
+                input[type="text"],
+                input[type="password"] {
+                    width: calc(100% - 18px);
+                    padding: 9px;
+                    border: 1px solid #cd8a04b8; /* Borde más oscuro para los inputs */
+                    border-radius: 4px;
+                    font-size: 0.95em;
+                    background-color: #e3c204bb; /* Fondo oscuro para los inputs */
+                    color: #eee; /* Texto claro dentro de los inputs */
+                }
+        
+                button {
+                    width: 100%;
+                    padding: 11px;
+                    background-color: #d3bc0fcf; 
+                    color: #000000; 
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-size: 1em;
+                    font-weight: bold;
+                    transition: background-color 0.3s ease;
+                }
+        
+                button:hover {
+                    background-color: #d1570cc2; /* Un tono ligeramente más claro al pasar el mouse */
+                }
+        
+                hr {
+                    border: none;
+                    height: 1.5px;
+                    background-color: #df8d08b6; /* Línea horizontal oscura */
+                    margin: 18px 0;
+                }
+            </style>
+            <script src="../js/index.js"></script>
+        </head>
+        <body>
+<div class=""menu-container">
             <h1>BIENVENIDO AL MUNDO POKIMON</h1>
             <p id="texto">Bienvenido a mi primer juego en javascript</p>
         </center>
-        <hr>
-        <br>
-        <br>
-        <br>
-        <center>
+         
+        <div class="input-group">
+       
             <label for="">Username</label>
             <input type="text" name="" id="username">
             <br>
             <label for="">Password</label>
             <input type="password" name="" id="clave">
-            <br>
+        </div>
+        <br>
+        <br>
             <button onclick="Loguear()">Inciar sesion</button>
-        </center>
+</div>
     </body>
 </html>
