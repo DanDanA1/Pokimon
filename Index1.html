@@ -2,47 +2,71 @@
 <html>
 <head>
   <title>Batalla Pokimon</title>
+  <!--Aquí va el CSS-->
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #ffffff;
-      text-align: center; 
+  body {
+    background-image: url('https://i.pinimg.com/originals/7e/30/f6/7e30f6211a5f6964c45b1a7d222fff45.gif');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #73069ac0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .pokemon-battle {
+    background-color: #ffffffe7;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #resultado {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  /* Opcional: Animaciones sutiles */
+  .pokemon-battle {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
     }
-
-    .pokemon-battle {
-      background-color: #ffffff;
-      border: 1px solid #0c0101;
-      padding: 20px;
-      width: 400px;
-      margin: 20px auto;
-
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-
-    h1 {
-      color: #000000;
-    }
-
-    p {
-      color: #000000;
-
-
-
-    }
-    
-
-     </style>
+  }
+</style>
+ 
 </head>
 <body>
   <div class="pokemon-battle">
     <h1>¡Batalla Pokimon!</h1>
     <p id="resultado"></p>
-    
-  </div>
+    </div>
 
-  <script>
-   
-
-    class Entrenador {
+  <script> class Entrenador {
         constructor(nombre, pokemonInicial) {
           this.nombre = nombre;
           this.pokemon = [pokemonInicial];
