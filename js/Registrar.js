@@ -1,3 +1,5 @@
+  /*Aquí va los requerimientos de js*/
+
 function Registrar() {
     let nombre = document.getElementById("nombre").value;
     let apellido = document.getElementById("apellido").value;

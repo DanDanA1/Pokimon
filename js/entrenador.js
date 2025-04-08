@@ -1,3 +1,5 @@
+/*validación de inicio*/
+
 function GetDataUser(){
   let dataUser = localStorage.getItem("user")
   
