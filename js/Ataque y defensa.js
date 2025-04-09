@@ -1,3 +1,6 @@
+/*pokimon batalla daños*/
+
+
 function calcularDaño(atacante, defensor) {
     let daño = atacante.ataque - defensor.defensa;
     if (daño < 0) {

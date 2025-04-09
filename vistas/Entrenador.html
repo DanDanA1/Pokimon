@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrenador</title>
-    
+    <script src="../js/index.js"></script>
+    <!--CSS-->
     <style>
         body {
             background-image: url('https://giffiles.alphacoders.com/215/215373.gif');
@@ -75,10 +76,14 @@
         button:hover {
             background-color: #06a3a3d0;
         }
+        
     </style>
+    <!--Llamado a js -->
     <script src="../js/Entrenador.js"></script>
+    <!--Aquí esta la estructura-->
 </head>
 <body>
+    
     <div>
         <fieldset>
             <legend><h1>Entrenador</h1></legend>
@@ -94,8 +99,9 @@
             <label for="email_entrenador">Email:</label>
             <input type="email" id="email_entrenador" name="email_entrenador" required><br><br>
         </fieldset>
+        <!--Aquí esta la parte de los pokimon-->
         <fieldset>
-            <legend><h1>Pokémons</h1></legend>
+            <legend><h1>Pokimons</h1></legend>
             <label for="nombre_pokemon">Nombre de Pokémon:</label>
             <input type="text" id="nombre_pokemon" name="nombre_pokemon" required><br><br>
 
@@ -107,13 +113,18 @@
 
             <label for="defensa_pokemon">Defensa:</label>
             <input type="email" id="defensa_pokemon" name="defensa_pokemon" required><br><br>
-        </fieldset>
+
+            
+        </fieldset> 
 
         <fieldset>
-            <legend><h1>OPCIONES</h1></legend>
-            <button>Combatir</button>
-            <button>Ver Pokémons</button>
+            <center>
+            <legend><h1> !A jugar¡ </h1></legend>
+            <a href="Batalla_Pokimon.html"><button>Combatir</button></a>
+            
+        </center>
         </fieldset>
     </div>
+
 </body>
 </html>

@@ -1,3 +1,6 @@
+/* inicio batalla pokimon*/
+
+
 class Batalla {
     constructor(entrenador1, entrenador2) {
       this.entrenador1 = entrenador1;

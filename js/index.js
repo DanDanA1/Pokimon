@@ -1,3 +1,5 @@
+/*Requerimientos de inicio*/
+
 function Loguear() {
     let username = document.getElementById('username').value
     let password = document.getElementById('clave').value

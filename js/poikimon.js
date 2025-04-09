@@ -1,3 +1,6 @@
+/*Aquí van las caracteristicas de funcionamiento pokimon*/
+
+
 class Pokemon {
     constructor(nombre, tipo, ataque, defensa, habilidad, evolucion) {
       this.nombre = nombre;
@@ -15,5 +18,5 @@ class Pokemon {
         this.vida = 0;
       }
     }
-    }
+    }    
     

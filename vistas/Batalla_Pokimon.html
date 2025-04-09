@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Batalla Pokimon</title>
+  <!--Aquí va el CSS-->
+  <style>
+  body {
+    background-image: url('https://i.pinimg.com/originals/7e/30/f6/7e30f6211a5f6964c45b1a7d222fff45.gif');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #73069ac0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .pokemon-battle {
+    background-color: #64118ac5;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.678);
+    text-align: center;
+  }
+  
+  h1 {
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  
+  #resultado {
+    font-size: 1.1em;
+    color: #ffffff;
+    margin-top: 20px;
+  }
+  
+  /* Opcional: Animaciones sutiles */
+  .pokemon-battle {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+ 
+</head>
+<body>
+  <div class="pokemon-battle">
+    <h1>¡Batalla Pokimon!</h1>
+    <p id="resultado"></p>
+    </div>
+
+
+    <script>
+      class Entrenador {
+        constructor(nombre) {
+          this.nombre = nombre;
+          this.pokemon = [];
+        }
+      }
+    
+      class Pokemon {
+        constructor(nombre, ataque, defensa, vidaInicial = 100) {
+          this.nombre = nombre;
+          this.ataque = ataque;
+          this.defensa = defensa;
+          this.vida = vidaInicial;
+        }
+    
+        recibirAtaque(daño) {
+          this.vida -= daño;
+          if (this.vida < 0) {
+            this.vida = 0;
+          }
+        }
+      }
+    
+      function calcularDaño(atacante, defensor) {
+        let dañoBase = atacante.ataque - defensor.defensa;
+        if (dañoBase < 0) {
+          dañoBase = 0;
+        }
+        const factorAleatorio = Math.random() * 0.1 + 0.9; // Número entre 0.9 y 1.1
+        return Math.round(dañoBase * factorAleatorio);
+      }
+    
+      function batallaPokemon() {
+        const nombresPokemon = ["Pikachu", "Charmander", "Bulbasaur", "Squirtle", "Eevee"];
+        const nombresEntrenador = ["Ash", "Misty", "Brock", "Gary", "Jessie"];
+    
+        // Elegir entrenadores y Pokémon al azar
+        const entrenador1Nombre = nombresEntrenador[Math.floor(Math.random() * nombresEntrenador.length)];
+        const entrenador2Nombre = nombresEntrenador[Math.floor(Math.random() * nombresEntrenador.length)];
+        const pokemon1Nombre = nombresPokemon[Math.floor(Math.random() * nombresPokemon.length)];
+        const pokemon2Nombre = nombresPokemon[Math.floor(Math.random() * nombresPokemon.length)];
+    
+        const entrenador1 = new Entrenador(entrenador1Nombre);
+        const entrenador2 = new Entrenador(entrenador2Nombre);
+    
+        // Crear Pokémon con estadísticas aleatorias (simplificado)
+        const ataqueBase = Math.floor(Math.random() * 15) + 10; // Ataque entre 10 y 24
+        const defensaBase = Math.floor(Math.random() * 10) + 5;  // Defensa entre 5 y 14
+        const pokemon1 = new Pokemon(pokemon1Nombre, ataqueBase, defensaBase);
+        const pokemon2 = new Pokemon(pokemon2Nombre, ataqueBase, defensaBase);
+    
+        entrenador1.pokemon.push(pokemon1);
+        entrenador2.pokemon.push(pokemon2);
+    
+        let turnoAtacante = Math.random() < 0.5 ? entrenador1 : entrenador2;
+        let turnoDefensor = turnoAtacante === entrenador1 ? entrenador2 : entrenador1;
+        let pokemonAtacante = turnoAtacante.pokemon[0];
+        let pokemonDefensor = turnoDefensor.pokemon[0];
+    
+        let resultadoTexto = `¡${entrenador1.nombre} con ${pokemon1.nombre} vs. ${entrenador2.nombre} con ${pokemon2.nombre}!\n\n`;
+    
+        while (pokemon1.vida > 0 && pokemon2.vida > 0) {
+        
+          const daño = calcularDaño(pokemonAtacante, pokemonDefensor);
+          pokemonDefensor.recibirAtaque(daño);
+          resultadoTexto += `${pokemonAtacante.nombre} de ${turnoAtacante.nombre} ataca a ${pokemonDefensor.nombre} e inflige ${daño} de daño. Vida restante de ${pokemonDefensor.nombre}: ${pokemonDefensor.vida}.\n`;
+    
+          if (pokemonDefensor.vida <= 0) {
+            resultadoTexto += `\n¡${pokemonDefensor.nombre} se ha debilitado! ¡${pokemonAtacante.nombre} de ${turnoAtacante.nombre} gana la batalla!\n`;
+            break;
+          }
+    
+          [turnoAtacante, turnoDefensor] = [turnoDefensor, turnoAtacante];
+          [pokemonAtacante, pokemonDefensor] = [pokemonDefensor, pokemonAtacante];
+        }
+    
+        document.getElementById("resultado").innerText = resultadoTexto;
+      }
+    // Iniciar la batalla automáticamente al cargar la página
+      batallaPokemon();
+    </script>
+
+    <script src="../vistas/Entrenador.html"></script>
+    <script src="../vistas/Batalla_Pokimon.html"></script>
+    <script src="js/pokimon.js"></script>
+
+
+    <center><a href="Batalla_Pokimon.html"><button>Empezar</button></a></center>
+    
+    <p id="resultado"></p>
+  </body>
+</html>
+  
+</body>
+</html>

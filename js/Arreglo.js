@@ -1,3 +1,7 @@
+/*Opciones de pokimon con sus caracteristicas*/
+
+
+
 const pokemons = [
     new Pokemon("Pikachu", "Eléctrico", 55, 40, "Electricidad Estática", "Raichu"),
     new Pokemon("Charizard", "Fuego/Volador", 84, 78, "Mar Llamas", "Mega-Charizard"),
